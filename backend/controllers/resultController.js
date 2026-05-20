@@ -3,7 +3,7 @@ import Student from "../models/Student.js";
 const getResult = async (req, res) => {
   try {
     const { applicationNumber, dob, aadhaarLast4 } = req.body;
-
+    console.log(applicationNumber);
     // VALIDATION
     if (!applicationNumber || !dob || !aadhaarLast4) {
       return res.status(400).json({
@@ -44,6 +44,8 @@ const getResult = async (req, res) => {
         studentName: student.studentName,
 
         fatherName: student.FatherName,
+
+        aadhaar: student.aadhaar,
 
         dob: student.dob,
 

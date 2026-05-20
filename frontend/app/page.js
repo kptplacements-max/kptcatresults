@@ -4,56 +4,70 @@ export default function Home() {
   return (
     <main className="h-screen flex flex-col bg-[#f5f5f5] overflow-hidden">
       {/* HEADER */}
-      <header className="bg-gradient-to-b from-white to-gray-100 border-b border-gray-300 shadow-sm shrink-0">
-        <div className="max-w-[1600px] mx-auto px-3 md:px-6 py-2 md:py-3">
-          <div className="flex items-center justify-between gap-2 md:gap-6">
+      <header className="bg-white border-b border-gray-300 shadow-sm shrink-0">
+        <div className="w-full px-3 md:px-6 py-1.5">
+          <div className="grid grid-cols-[60px_1fr_60px] md:grid-cols-[90px_1fr_90px] items-center">
             {/* LEFT LOGO */}
-            <div className="flex-shrink-0">
+            <div className="flex justify-start">
               <img
                 src="/logo.jpg"
                 alt="Left Logo"
-                className="w-14 sm:w-16 md:w-24 object-contain"
+                className="w-10 md:w-16 object-contain"
               />
             </div>
 
-            {/* CENTER CONTENT */}
-            <div className="flex-1 text-center leading-tight">
-              {/* TOP LOGO */}
+            {/* CENTER */}
+            <div className="text-center leading-tight px-2">
+              {/* GOVT LOGO */}
               <img
                 src="/logo1.jpg"
                 alt="Govt Logo"
-                className="w-8 sm:w-10 md:w-14 mx-auto mb-1"
+                className="w-6 md:w-8 mx-auto mb-0.5"
               />
 
-              {/* GOVT */}
-              <h3 className="text-[9px] sm:text-xs md:text-xs font-semibold tracking-[2px] md:tracking-[8px] text-blue-800 uppercase">
+              <h3
+                className="text-[8px] sm:text-[10px] md:text-xs font-semibold tracking-[2px] md:tracking-[5px] text-blue-900 uppercase"
+                style={{
+                  fontFamily: "Georgia, serif",
+                }}
+              >
                 Government of Karnataka
               </h3>
 
-              {/* DEPARTMENT */}
-              <h4 className="text-[10px] sm:text-sm md:text-xl font-medium text-green-700 mt-1">
+              <h4
+                className="text-[9px] sm:text-[10px] md:text-sm font-medium text-green-800"
+                style={{
+                  fontFamily: "Georgia, serif",
+                }}
+              >
                 Department of Collegiate and Technical Education
               </h4>
 
-              {/* COLLEGE NAME */}
-              <h1 className="mt-1 md:mt-2 text-xl sm:text-xl md:text-4xl font-extrabold leading-none">
-                <span className="bg-gradient-to-r from-red-700 via-orange-500 to-pink-600 bg-clip-text text-transparent">
-                  Karnataka (Govt.) Polytechnic, Mangaluru
-                </span>
+              <h1
+                className="text-lg sm:text-2xl md:text-3xl font-bold text-[#b22222] leading-none mt-0.5"
+                style={{
+                  fontFamily: "'Times New Roman', serif",
+                }}
+              >
+                Karnataka (Govt.) Polytechnic, Mangaluru
               </h1>
 
-              {/* SUBTITLE */}
-              <p className="italic text-gray-600 text-[10px] sm:text-xs md:text-xl mt-1 md:mt-2">
+              <p
+                className="italic text-gray-600 text-[7px] sm:text-[9px] md:text-xs mt-0.5"
+                style={{
+                  fontFamily: "Georgia, serif",
+                }}
+              >
                 (An Autonomous Polytechnic under AICTE, New Delhi)
               </p>
             </div>
 
             {/* RIGHT LOGO */}
-            <div className="flex-shrink-0">
+            <div className="flex justify-end">
               <img
                 src="/logo2.png"
                 alt="Right Logo"
-                className="w-14 sm:w-16 md:w-24 object-contain"
+                className="w-10 md:w-16 object-contain"
               />
             </div>
           </div>
