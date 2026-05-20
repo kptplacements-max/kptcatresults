@@ -24,11 +24,11 @@ export default function WaitingForm() {
 
               <p className="text-sm text-gray-700 leading-relaxed">
                 Karnataka (Govt.) Polytechnic, Mangaluru Entrance Examination
-                results will be made available online today at
+                results will be made available online today 
               </p>
 
               <div className="mt-4 text-3xl font-bold text-orange-600">
-                5:00 PM
+                soon
               </div>
             </div>
 
