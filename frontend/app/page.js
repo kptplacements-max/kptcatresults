@@ -3,7 +3,7 @@ import WaitingForm from "./components/WaitingForm";
 
 export default function Home() {
   return (
-    <main className="h-screen flex flex-col bg-[#f5f5f5] overflow-hidden">
+    <main className="min-h-screen flex flex-col bg-[#f5f5f5]">
       {/* HEADER */}
       <header className="bg-white border-b border-gray-300 shadow-sm shrink-0">
         <div className="w-full px-3 md:px-6 py-1.5">
@@ -102,9 +102,12 @@ export default function Home() {
         </div>
 
         {/* RIGHT FORM */}
-        <div className="flex items-center justify-center p-4 md:p-6 overflow-y-auto">
-          {/* <ResultForm /> */}
-          <WaitingForm/>
+        {/* <div className="flex items-center justify-center p-4 md:p-6 overflow-y-auto">
+          <ResultForm />
+        </div> */}
+
+        <div className="flex items-center justify-center p-4 md:p-6">
+          <WaitingForm />
         </div>
       </section>
 
