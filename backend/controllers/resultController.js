@@ -4,6 +4,7 @@ const getResult = async (req, res) => {
   try {
     const { applicationNumber, dob, aadhaarLast4 } = req.body;
 
+    // VALIDATION
     if (!applicationNumber || !dob || !aadhaarLast4) {
       return res.status(400).json({
         success: false,
@@ -11,12 +12,21 @@ const getResult = async (req, res) => {
       });
     }
 
+    // FORMAT DOB
+    const formattedDOB = new Date(dob)
+      .toLocaleDateString("en-US")
+      .replace(/\//g, "-");
+
+    // FIND STUDENT
     const student = await Student.findOne({
       applicationNumber,
-      dob,
-      aadhaarLast4,
+
+      aadhaarLast4: Number(aadhaarLast4),
+
+      $or: [{ dob }, { dob: formattedDOB }],
     });
 
+    // NOT FOUND
     if (!student) {
       return res.status(404).json({
         success: false,
@@ -24,6 +34,7 @@ const getResult = async (req, res) => {
       });
     }
 
+    // SUCCESS RESPONSE
     return res.status(200).json({
       success: true,
 
@@ -32,25 +43,25 @@ const getResult = async (req, res) => {
 
         studentName: student.studentName,
 
-        fatherName: student.fatherName,
+        fatherName: student.FatherName,
 
         dob: student.dob,
 
-        gender: student.gender,
+        gender: student.Gender,
 
-        religion: student.religion,
+        religion: student.Religion,
 
         cetMarks: student.cetMarks,
 
         sslcMarks: student.sslcMarks,
 
-        totalSM: student.totalSM,
+        totalSM: student.TotalSM,
 
-        category: student.category,
+        category: student.Category,
 
-        rural: student.rural,
+        rural: student.Rural,
 
-        kannadaMedium: student.kannadaMedium,
+        kannadaMedium: student.KannadaMedium,
       },
     });
   } catch (error) {

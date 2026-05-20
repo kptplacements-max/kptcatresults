@@ -1,4 +1,4 @@
-import ResultForm from "./src/components/ResultForm";
+import ResultForm from "./components/ResultForm";
 
 export default function Home() {
   return (

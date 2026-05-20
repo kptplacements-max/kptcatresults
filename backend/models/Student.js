@@ -16,9 +16,8 @@ const studentSchema = new mongoose.Schema(
     },
 
     aadhaarLast4: {
-      type: String,
+      type: Number,
       required: true,
-      trim: true,
     },
 
     studentName: {
@@ -27,7 +26,7 @@ const studentSchema = new mongoose.Schema(
       trim: true,
     },
 
-    fatherName: {
+    FatherName: {
       type: String,
       trim: true,
     },
@@ -37,17 +36,17 @@ const studentSchema = new mongoose.Schema(
       required: true,
     },
 
-    gender: {
+    Gender: {
       type: String,
       trim: true,
     },
 
-    nationalityIndian: {
+    "Nationality Indian": {
       type: String,
       trim: true,
     },
 
-    religion: {
+    Religion: {
       type: String,
       trim: true,
     },
@@ -62,22 +61,22 @@ const studentSchema = new mongoose.Schema(
       default: null,
     },
 
-    totalSM: {
+    TotalSM: {
+      type: Number,
+      default: null,
+    },
+
+    Category: {
       type: String,
       trim: true,
     },
 
-    category: {
+    Rural: {
       type: String,
       trim: true,
     },
 
-    rural: {
-      type: String,
-      trim: true,
-    },
-
-    kannadaMedium: {
+    KannadaMedium: {
       type: String,
       trim: true,
     },
