@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-
 import axios from "axios";
 
 export default function ResultForm() {
   const [formData, setFormData] = useState({
     applicationNumber: "",
-    dob: "",
     aadhaarLast4: "",
   });
 
@@ -34,15 +32,9 @@ export default function ResultForm() {
 
       setError("");
 
-      const [year, month, day] = formData.dob.split("-");
-
-      const formattedDOB = `${Number(month)}-${Number(day)}-${year}`;
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/api/results/search`,
-        {
-          ...formData,
-          dob: formattedDOB,
-        },
+        formData,
       );
 
       setResult(response.data.student);
@@ -87,22 +79,6 @@ export default function ResultForm() {
               value={formData.applicationNumber}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-
-          {/* DOB */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Date of Birth
-            </label>
-
-            <input
-              type="date"
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-800 outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -207,7 +183,6 @@ export default function ResultForm() {
                   </span>
 
                   <span className="font-bold text-[#081633]">
-                    {/* XXXX XXXX {result.aadhaar.slice(-4)} */}
                     XXXX XXXX {result.aadhaar?.toString().slice(-4)}
                   </span>
                 </div>

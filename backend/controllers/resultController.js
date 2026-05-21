@@ -2,28 +2,20 @@ import Student from "../models/Student.js";
 
 const getResult = async (req, res) => {
   try {
-    const { applicationNumber, dob, aadhaarLast4 } = req.body;
-    console.log(applicationNumber);
+    const { applicationNumber, aadhaarLast4 } = req.body;
+
     // VALIDATION
-    if (!applicationNumber || !dob || !aadhaarLast4) {
+    if (!applicationNumber || !aadhaarLast4) {
       return res.status(400).json({
         success: false,
         message: "All fields are required",
       });
     }
 
-    // FORMAT DOB
-    const formattedDOB = new Date(dob)
-      .toLocaleDateString("en-US")
-      .replace(/\//g, "-");
-
     // FIND STUDENT
     const student = await Student.findOne({
       applicationNumber,
-
       aadhaarLast4: Number(aadhaarLast4),
-
-      $or: [{ dob }, { dob: formattedDOB }],
     });
 
     // NOT FOUND
@@ -46,8 +38,6 @@ const getResult = async (req, res) => {
         fatherName: student.FatherName,
 
         aadhaar: student.aadhaar,
-
-        dob: student.dob,
 
         gender: student.Gender,
 
