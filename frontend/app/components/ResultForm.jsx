@@ -192,7 +192,7 @@ export default function ResultForm() {
 
                   {Number(result.cetMarks) === 0 ? (
                     <span className="font-bold text-orange-600 text-right">
-                      Wait, your result is awaited
+                      ABSENT
                     </span>
                   ) : (
                     <span className="font-bold text-green-700 text-xl">
