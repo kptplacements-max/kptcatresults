@@ -54,7 +54,9 @@ export default function ResultForm() {
         <div className="text-center">
           <div className="text-4xl mb-2">🎓</div>
 
-          <h2 className="text-xl font-bold text-[#081633]">KPT-CAT 2026</h2>
+          <h2 className="text-xl font-bold text-[#081633]">
+            KPT Admission 2026
+          </h2>
 
           <p className="text-gray-500 text-sm mt-1">
             Student Result Verification Portal
@@ -131,11 +133,12 @@ export default function ResultForm() {
                   <div className="text-3xl mb-1">🏆</div>
 
                   <h2 className="text-xl md:text-2xl font-bold">
-                    Result Published
+                    Draft Merit List Published
                   </h2>
 
                   <p className="text-blue-100 mt-1 text-xs md:text-sm">
-                    Karnataka Polytechnic Common Admission Test 2026
+                    Karnataka (Govt.) Polytechnic - Admission (Regular Diploma)
+                    2026
                   </p>
                 </div>
 
@@ -271,8 +274,7 @@ export default function ResultForm() {
                 </p>
 
                 <p className="text-xs md:text-sm text-gray-700 mt-2 leading-relaxed">
-                  If any discrepancy is found, objections may be raised before
-                  publication of the final merit list.
+                  If any discrepancy is found, objections may be raised on or before 25/05/2026 Monday 5.00 PM.
                 </p>
 
                 <div className="mt-3 bg-white border border-orange-200 rounded-xl p-3">

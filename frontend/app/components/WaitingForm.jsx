@@ -19,16 +19,16 @@ export default function WaitingForm() {
           <div className="space-y-4">
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
               <h3 className="text-lg font-semibold text-[#081633] mb-2">
-                KPT-CAT 2026
+                Karnataka (Govt.) Polytechnic - Admission (Regular Diploma) 2026
               </h3>
 
               <p className="text-sm text-gray-700 leading-relaxed">
-                Karnataka (Govt.) Polytechnic, Mangaluru Entrance Examination
-                results will be made available online today 
+                Karnataka (Govt.) Polytechnic, Mangaluru draft Merit List will
+                be made available online today
               </p>
 
               <div className="mt-4 text-3xl font-bold text-orange-600">
-                soon
+                5.00 PM
               </div>
             </div>
 
