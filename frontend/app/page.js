@@ -102,13 +102,13 @@ export default function Home() {
         </div>
 
         {/* RIGHT FORM */}
-        {/* <div className="flex items-center justify-center p-4 md:p-6 overflow-y-auto">
+        <div className="flex items-center justify-center p-4 md:p-6 overflow-y-auto">
           <ResultForm />
-        </div> */}
-
-        <div className="flex items-center justify-center p-4 md:p-6">
-          <WaitingForm />
         </div>
+
+        {/* <div className="flex items-center justify-center p-4 md:p-6">
+          <WaitingForm />
+        </div> */}
       </section>
 
       {/* FOOTER */}

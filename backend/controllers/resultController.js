@@ -15,11 +15,10 @@ const getResult = async (req, res) => {
     // FIND STUDENT
     const student = await Student.findOne({
       applicationNumber: applicationNumber.trim(),
-
       aadhaarLast4: Number(aadhaarLast4),
     });
 
-    // STUDENT NOT FOUND
+    // NOT FOUND
     if (!student) {
       return res.status(404).json({
         success: false,
@@ -32,41 +31,82 @@ const getResult = async (req, res) => {
       success: true,
 
       student: {
+        // MERIT
         draftMeritNo: student.draftMeritNo,
+        finalMeritNo: student.finalMeritNo,
 
+        // BASIC DETAILS
         applicationNumber: student.applicationNumber,
+        satsNumber: student.satsNumber,
 
         studentName: student.studentName,
-
         fatherName: student.fatherName,
-
         motherName: student.motherName,
 
         dob: student.dob,
-
         gender: student.gender,
 
+        // AADHAAR
         aadhaar: student.aadhaar,
-
         aadhaarLast4: student.aadhaarLast4,
 
-        sslcObtained: student.sslcObtained,
+        // CONTACT
+        mobileNumber: student.mobileNumber,
+        parentMobileNumber: student.parentMobileNumber,
+        email: student.email,
 
+        address: student.address,
+        state: student.state,
+        district: student.district,
+        pincode: student.pincode,
+
+        // EDUCATION
+        qualifyingExam: student.qualifyingExam,
+        passingYear: student.passingYear,
+
+        sslcRegisterNumber: student.sslcRegisterNumber,
+
+        sslcMaxMarks: student.sslcMaxMarks,
+        sslcObtained: student.sslcObtained,
         sslcPercentage: student.sslcPercentage,
 
+        // CAT
+        catMaxMarks: student.catMaxMarks,
         catObtained: student.catObtained,
-
         catPercentage: student.catPercentage,
 
+        // SCIENCE + MATHS
+        scienceMarks: student.scienceMarks,
+        mathsMarks: student.mathsMarks,
+        totalScienceMaths: student.totalScienceMaths,
+
+        // FINAL %
         overallPercentage: student.overallPercentage,
 
+        // CATEGORY
         category: student.category,
-
+        groupForSCOnly: student.groupForSCOnly,
         casteName: student.casteName,
 
-        rural: student.rural,
+        religion: student.religion,
+        nationality: student.nationality,
+        income: student.income,
 
+        rural: student.rural,
         kannadaMedium: student.kannadaMedium,
+        hydKarnataka: student.hydKarnataka,
+        specialCategory: student.specialCategory,
+
+        // DOCUMENTS
+        certificateAvailable: student.certificateAvailable,
+        acknowledgementNumber: student.acknowledgementNumber,
+
+        // STATUS
+        objectionRaised: student.objectionRaised,
+        objectionReason: student.objectionReason,
+
+        verified: student.verified,
+        admissionStatus: student.admissionStatus,
 
         createdAt: student.createdAt,
       },
