@@ -8,17 +8,18 @@ const getResult = async (req, res) => {
     if (!applicationNumber || !aadhaarLast4) {
       return res.status(400).json({
         success: false,
-        message: "All fields are required",
+        message: "Application Number and Aadhaar Last 4 Digits are required",
       });
     }
 
     // FIND STUDENT
     const student = await Student.findOne({
-      applicationNumber,
+      applicationNumber: applicationNumber.trim(),
+
       aadhaarLast4: Number(aadhaarLast4),
     });
 
-    // NOT FOUND
+    // STUDENT NOT FOUND
     if (!student) {
       return res.status(404).json({
         success: false,
@@ -31,29 +32,43 @@ const getResult = async (req, res) => {
       success: true,
 
       student: {
+        draftMeritNo: student.draftMeritNo,
+
         applicationNumber: student.applicationNumber,
 
         studentName: student.studentName,
 
-        fatherName: student.FatherName,
+        fatherName: student.fatherName,
+
+        motherName: student.motherName,
+
+        dob: student.dob,
+
+        gender: student.gender,
 
         aadhaar: student.aadhaar,
 
-        gender: student.Gender,
+        aadhaarLast4: student.aadhaarLast4,
 
-        religion: student.Religion,
+        sslcObtained: student.sslcObtained,
 
-        cetMarks: student.cetMarks,
+        sslcPercentage: student.sslcPercentage,
 
-        sslcMarks: student.sslcMarks,
+        catObtained: student.catObtained,
 
-        totalSM: student.TotalSM,
+        catPercentage: student.catPercentage,
 
-        category: student.Category,
+        overallPercentage: student.overallPercentage,
 
-        rural: student.Rural,
+        category: student.category,
 
-        kannadaMedium: student.KannadaMedium,
+        casteName: student.casteName,
+
+        rural: student.rural,
+
+        kannadaMedium: student.kannadaMedium,
+
+        createdAt: student.createdAt,
       },
     });
   } catch (error) {

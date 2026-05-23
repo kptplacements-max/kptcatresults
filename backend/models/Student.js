@@ -2,10 +2,42 @@ import mongoose from "mongoose";
 
 const studentSchema = new mongoose.Schema(
   {
+    draftMeritNo: {
+      type: Number,
+      default: null,
+    },
+
     applicationNumber: {
       type: String,
       required: true,
       unique: true,
+      trim: true,
+    },
+
+    studentName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    fatherName: {
+      type: String,
+      trim: true,
+    },
+
+    motherName: {
+      type: String,
+      trim: true,
+    },
+
+    dob: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    gender: {
+      type: String,
       trim: true,
     },
 
@@ -20,63 +52,50 @@ const studentSchema = new mongoose.Schema(
       required: true,
     },
 
-    studentName: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-
-    FatherName: {
-      type: String,
-      trim: true,
-    },
-
-    dob: {
-      type: String,
-      required: true,
-    },
-
-    Gender: {
-      type: String,
-      trim: true,
-    },
-
-    "Nationality Indian": {
-      type: String,
-      trim: true,
-    },
-
-    Religion: {
-      type: String,
-      trim: true,
-    },
-
-    cetMarks: {
+    sslcObtained: {
       type: Number,
       default: null,
     },
 
-    sslcMarks: {
-      type: Number,
-      default: null,
-    },
-
-    TotalSM: {
-      type: Number,
-      default: null,
-    },
-
-    Category: {
+    // CHANGE TO STRING
+    sslcPercentage: {
       type: String,
       trim: true,
     },
 
-    Rural: {
+    catObtained: {
+      type: Number,
+      default: null,
+    },
+
+    // CHANGE TO STRING
+    catPercentage: {
       type: String,
       trim: true,
     },
 
-    KannadaMedium: {
+    // CHANGE TO STRING
+    overallPercentage: {
+      type: String,
+      trim: true,
+    },
+
+    category: {
+      type: String,
+      trim: true,
+    },
+
+    casteName: {
+      type: String,
+      trim: true,
+    },
+
+    rural: {
+      type: String,
+      trim: true,
+    },
+
+    kannadaMedium: {
       type: String,
       trim: true,
     },
@@ -86,9 +105,9 @@ const studentSchema = new mongoose.Schema(
   },
 );
 
+// LOGIN INDEX
 studentSchema.index({
   applicationNumber: 1,
-  dob: 1,
   aadhaarLast4: 1,
 });
 
