@@ -1,3 +1,4 @@
+import MeritList from "./components/MerilList";
 import ResultForm from "./components/ResultForm";
 import WaitingForm from "./components/WaitingForm";
 
@@ -103,7 +104,7 @@ export default function Home() {
 
         {/* RIGHT FORM */}
         <div className="flex items-center justify-center p-4 md:p-6 overflow-y-auto">
-          <ResultForm />
+          <MeritList />
         </div>
 
         {/* <div className="flex items-center justify-center p-4 md:p-6">
