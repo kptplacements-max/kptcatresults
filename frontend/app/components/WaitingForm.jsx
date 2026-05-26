@@ -17,8 +17,8 @@ export default function WaitingForm() {
           <div className="space-y-4">
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
               <p className="text-sm text-gray-700 leading-relaxed">
-                Karnataka (Govt.) Polytechnic, Mangaluru Draft Merit List will
-                be made available online today
+                Karnataka (Govt.) Polytechnic, Mangaluru Final Merit List will
+                be made available online today 26-05-2026, Tuesday at
               </p>
 
               <div className="mt-4 text-3xl font-bold text-orange-600">
